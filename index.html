@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جريدة SSC</title>
+    <title>SSC</title>
     
-    <!-- كود Google AdSense التلقائي الأساسي -->
+    <!-- كود Google AdSense التلقائي الأساسي (محفوظ) -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4545737968537975"
      crossorigin="anonymous"></script>
 
@@ -15,101 +15,88 @@
         header h1 { margin: 0; font-size: 28px; font-weight: bold; }
         a { text-decoration: none; color: inherit; }
         
-        .main-container { display: flex; max-width: 1250px; margin: 20px auto; gap: 15px; padding: 0 10px; justify-content: center; align-items: flex-start; }
+        .main-container { max-width: 1000px; margin: 30px auto; padding: 0 15px; }
         
-        /* المساحات الإعلانية الجانبية */
-        .ad-banner-box { width: 180px; min-height: 500px; background-color: #eaeaea; border: 2px dashed #bbb; border-radius: 6px; padding: 10px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; }
-        
-        /* الإعلان القابل للنقر */
-        .ad-link { display: block; background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 10px; text-align: center; color: #333; transition: 0.2s; cursor: pointer; width: 100%; box-sizing: border-box; margin-top: 10px; }
-        .ad-link:hover { border-color: #d32f2f; transform: scale(1.02); }
-        .ad-title { color: #d32f2f; font-size: 14px; font-weight: bold; margin-bottom: 8px; }
-        .ad-desc { font-size: 11px; color: #555; line-height: 1.4; margin-bottom: 8px; }
-        .ad-credits { background: #f9f9f9; border-radius: 4px; padding: 6px; font-size: 10px; border: 1px dashed #ddd; text-align: right; margin-bottom: 8px; }
-        .ad-btn { background: #d32f2f; color: #fff; font-size: 11px; padding: 5px; border-radius: 4px; font-weight: bold; display: block; }
-
-        /* المحتوى الأوسط */
-        .content-area { flex: 1; max-width: 850px; }
-        .top-section { display: flex; gap: 15px; }
-        .news-section { width: 70%; }
+        .top-section { display: flex; gap: 20px; align-items: flex-start; }
+        .news-section { flex: 1; }
         .news-section h2 { margin-top: 0; border-right: 4px solid #d32f2f; padding-right: 10px; font-size: 20px; color: #1a1a1a; }
-        .news-grid { display: flex; gap: 15px; }
-        .news-card { flex: 1; background: #fff; padding: 12px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; border: 1px solid #eee; transition: 0.2s; }
-        .news-card:hover { transform: translateY(-3px); }
-        .about-box { width: 30%; background: #fff; padding: 15px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 3px solid #d32f2f; height: fit-content; border: 1px solid #eee; }
+        
+        /* شبكة الكروت: جعل الأشرطة والكروت بجانب بعضها في النص */
+        .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        
+        /* تصميم كروت الأخبار والإعلان */
+        .news-card { background: #fff; padding: 12px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; border: 1px solid #eee; transition: 0.2s; display: flex; flex-direction: column; justify-content: space-between; height: 100%; box-sizing: border-box; }
+        .news-card:hover { transform: translateY(-3px); border-color: #d32f2f; }
+        
+        /* كارت الإعلان الداخلي */
+        .ad-card { border: 2px solid #d32f2f; background: #fff; cursor: pointer; }
+        .ad-title { color: #d32f2f; font-size: 14px; font-weight: bold; margin-bottom: 6px; }
+        .ad-desc { font-size: 11px; color: #555; line-height: 1.4; margin-bottom: 8px; }
+        .ad-credits { background: #fdf2f2; border-radius: 4px; padding: 6px; font-size: 10px; border: 1px dashed #f5c6c6; text-align: right; margin-bottom: 8px; color: #333; }
+        .ad-btn { background: #d32f2f; color: #fff; font-size: 11px; padding: 6px; border-radius: 4px; font-weight: bold; display: block; width: 100%; box-sizing: border-box; }
 
-        footer { background: #1a1a1a; color: #ccc; text-align: center; padding: 15px; margin-top: 40px; font-size: 13px; }
+        .about-box { width: 250px; background: #fff; padding: 15px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 3px solid #d32f2f; height: fit-content; border: 1px solid #eee; }
+
+        footer { background: #1a1a1a; color: #ccc; text-align: center; padding: 15px; margin-top: 50px; font-size: 13px; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>جريدة SSC</h1>
+        <h1>SSC</h1>
     </header>
 
     <div class="main-container">
         
-        <!-- المساحة الإعلانية اليمين -->
-        <div class="ad-banner-box">
-            <a href="post.html?title=تغطية خاصة لأحداث السودان&content=تغطية إخبارية مستمرة لأحدث المستجدات والتقارير الحصرية." class="ad-link">
-                <div class="ad-title">🇸🇩 نبض السودان</div>
-                <div class="ad-desc">متابعة شاملة وأحدث التغطيات والتطورات في السودان لحظة بلحظة عبر SSC.</div>
-                <div class="ad-credits">
-                    📌 <b>فكرة:</b> محمد أحمد البشرى<br>
-                    🛠️ <b>إعداد:</b> أبو القاسم محمد أحمد البشرى
-                </div>
-                <span class="ad-btn">تصفح أخبار السودان</span>
-            </a>
-        </div>
-
-        <!-- المحتوى الأوسط -->
-        <div class="content-area">
-            <div class="top-section">
+        <div class="top-section">
+            
+            <div class="news-section">
+                <h2>أحدث النشرات والجرائد</h2>
                 
-                <div class="news-section">
-                    <h2>أحدث النشرات والجرائد</h2>
-                    <div class="news-grid">
-                        
-                        <a href="post.html?title=موقع SSC الإخباري ينطلق رسمياً&content=أهلاً بكم في موقع SSC، المنصة المخصصة لنشر أحدث الأخبار والتغطيات الحصرية." class="news-card">
-                            <div style="background:#e0e0e0; height:90px; display:flex; align-items:center; justify-content:center; color:#666; font-size:12px; border-radius:4px;">صورة الخبر</div>
-                            <h4 style="font-size:13px; margin:10px 0 5px;">موقع SSC ينطلق رسمياً</h4>
-                            <span style="font-size:11px; color:#888;">تم النشر الآن</span>
-                        </a>
+                <div class="news-grid">
+                    
+                    <!-- الخبر الأول -->
+                    <a href="post.html?title=موقع SSC الإخباري ينطلق رسمياً&content=أهلاً بكم في موقع SSC، المنصة المخصصة لنشر أحدث الأخبار والتغطيات الحصرية." class="news-card">
+                        <div style="background:#e0e0e0; height:100px; display:flex; align-items:center; justify-content:center; color:#666; font-size:12px; border-radius:4px;">صورة الخبر</div>
+                        <h4 style="font-size:13px; margin:10px 0 5px;">موقع SSC ينطلق رسمياً</h4>
+                        <span style="font-size:11px; color:#888;">تم النشر الآن</span>
+                    </a>
 
-                        <a href="post.html?title=تغطية خاصة لأحداث السودان&content=تغطية إخبارية مستمرة لأحدث المستجدات والتقارير الحصرية." class="news-card">
-                            <div style="background:#e0e0e0; height:90px; display:flex; align-items:center; justify-content:center; color:#666; font-size:12px; border-radius:4px;">صورة الخبر</div>
-                            <h4 style="font-size:13px; margin:10px 0 5px;">تغطية حصرية وأخبار عاجلة</h4>
-                            <span style="font-size:11px; color:#888;">منذ 30 دقيقة</span>
-                        </a>
+                    <!-- الخبر الثاني -->
+                    <a href="post.html?title=تغطية خاصة لأحداث السودان&content=تغطية إخبارية مستمرة لأحدث المستجدات والتقارير الحصرية." class="news-card">
+                        <div style="background:#e0e0e0; height:100px; display:flex; align-items:center; justify-content:center; color:#666; font-size:12px; border-radius:4px;">صورة الخبر</div>
+                        <h4 style="font-size:13px; margin:10px 0 5px;">تغطية حصرية وأخبار عاجلة</h4>
+                        <span style="font-size:11px; color:#888;">منذ 30 دقيقة</span>
+                    </a>
 
-                    </div>
+                    <!-- الإعلان التجريبي في النص بنفس الحجم والارتفاع -->
+                    <a href="post.html?title=تغطية خاصة لأحداث السودان&content=تغطية إخبارية مستمرة لأحدث المستجدات والتقارير الحصرية." class="news-card ad-card">
+                        <div>
+                            <div class="ad-title">🇸🇩 نبض السودان</div>
+                            <div class="ad-desc">متابعة شاملة وأحدث التغطيات والتطورات في السودان لحظة بلحظة عبر SSC.</div>
+                            <div class="ad-credits">
+                                📌 <b>فكرة:</b> محمد أحمد البشرى<br>
+                                🛠️ <b>إعداد:</b> أبو القاسم محمد أحمد البشرى
+                            </div>
+                        </div>
+                        <span class="ad-btn">تصفح أخبار السودان</span>
+                    </a>
+
                 </div>
-
-                <div class="about-box">
-                    <h3 style="margin-top:0; font-size:15px;">عن الموقع</h3>
-                    <p style="font-size:12px; color:#555; line-height:1.5;">جريدة SSC الرسمية لنشر أحدث المقالات والتقارير الحصرية.</p>
-                </div>
-
             </div>
-        </div>
 
-        <!-- المساحة الإعلانية اليسار -->
-        <div class="ad-banner-box">
-            <a href="post.html?title=موقع SSC الإخباري ينطلق رسمياً&content=أهلاً بكم في موقع SSC، المنصة المخصصة لنشر أحدث الأخبار والتغطيات الحصرية." class="ad-link">
-                <div class="ad-title">جريدة SSC</div>
-                <div class="ad-desc">منصتك الأولى للحصول على الأخبار الموثوقة والتغطيات المباشرة.</div>
-                <div class="ad-credits">
-                    💡 <b>فكرة:</b> محمد أحمد البشرى<br>
-                    ✍️ <b>إعداد:</b> أبو القاسم محمد أحمد البشرى
-                </div>
-                <span class="ad-btn" style="background:#1a1a1a;">تابعنا الآن</span>
-            </a>
+            <!-- مربع عن الموقع -->
+            <div class="about-box">
+                <h3 style="margin-top:0; font-size:15px;">عن الموقع</h3>
+                <p style="font-size:12px; color:#555; line-height:1.5;">موقع SSC الرسمي لنشر أحدث المقالات والتقارير الحصرية.</p>
+            </div>
+
         </div>
 
     </div>
 
     <footer>
-        جميع الحقوق محفوظة © 2026 - جريدة SSC
+        جميع الحقوق محفوظة © 2026 - SSC
     </footer>
 
 </body>
