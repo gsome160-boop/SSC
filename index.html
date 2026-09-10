@@ -3,119 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جريدة SSC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>SSC</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
-        body { background-color: #f4f4f9; color: #333; }
+        body { font-family: sans-serif; background-color: #f4f4f9; margin: 0; padding: 0; }
+        header { background-color: #1a1a1a; color: #fff; text-align: center; padding: 15px 0; border-bottom: 4px solid #d32f2f; }
+        header h1 { margin: 0; font-size: 28px; }
         
-        /* هيدر بسيط يعرض اسم الجريدة فقط */
-        header { 
-            background-color: #1a1a1a; 
-            color: #fff; 
-            padding: 20px 5%; 
-            text-align: center;
-            border-bottom: 4px solid #e63946; 
-        }
-        .logo h1 { font-size: 32px; font-weight: 900; color: #fff; }
-        .logo span { color: #e63946; }
-
-        .container { 
-            display: grid; 
-            grid-template-columns: 3fr 1fr; 
-            gap: 20px; 
-            padding: 30px 5%; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-        }
-
-        .section-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            border-right: 4px solid #e63946;
-            padding-right: 10px;
-        }
-
-        /* شبكة الأخبار الجديد */
-        .news-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-            gap: 20px; 
-        }
-        .news-card { 
-            background: #fff; 
-            border-radius: 8px; 
-            overflow: hidden; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-            transition: transform 0.2s; 
-        }
-        .news-card:hover { transform: translateY(-5px); }
-        .news-card img { width: 100%; height: 180px; object-fit: cover; }
-        .news-content { padding: 15px; }
-        .news-title { font-size: 18px; margin: 10px 0; color: #1a1a1a; }
-        .news-meta { font-size: 12px; color: #777; }
-
-        .sidebar { display: flex; flex-direction: column; gap: 20px; }
-        .ad-space { 
-            background-color: #e9ecef; 
-            border: 2px dashed #ccc; 
-            text-align: center; 
-            padding: 40px 10px; 
-            color: #888; 
-            font-weight: bold; 
-            border-radius: 8px; 
-        }
-        .widget { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
-
-        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
+        /* تخطيط الصفحة الرئيسي */
+        .main-container { display: flex; max-width: 1200px; margin: 20px auto; gap: 15px; padding: 0 10px; }
+        
+        /* المساحات الإعلانية الجانبية */
+        .ad-banner { width: 180px; min-height: 400px; background-color: #e0e0e0; border: 2px dashed #bbb; display: flex; align-items: center; justify-content: center; color: #666; font-size: 14px; text-align: center; }
+        
+        /* المحتوى الأوسط */
+        .content-area { flex: 1; }
+        
+        /* قسم عن الموقع والأخبار */
+        .top-section { display: flex; gap: 15px; margin-bottom: 20px; }
+        .about-box { width: 30%; background: #fff; padding: 15px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 3px solid #d32f2f; }
+        .about-box h3 { margin-top: 0; color: #1a1a1a; }
+        
+        .news-section { width: 70%; }
+        .news-section h2 { margin-top: 0; border-right: 4px solid #d32f2f; padding-right: 10px; font-size: 20px; }
+        .news-grid { display: flex; gap: 15px; }
+        .news-card { flex: 1; background: #fff; padding: 12px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+        .news-card img { width: 100%; height: 120px; object-fit: cover; background: #eee; border-radius: 4px; }
+        
+        footer { background: #1a1a1a; color: #ccc; text-align: center; padding: 15px; margin-top: 30px; font-size: 13px; }
     </style>
 </head>
 <body>
 
-    <!-- اسم الموقع فقط -->
     <header>
-        <div class="logo"><h1>جريدة <span>SSC</span></h1></div>
+        <h1>SSC</h1>
     </header>
 
-    <!-- المساحة الرئيسية للـ الأخبار والجديد -->
-    <div class="container">
-        <main>
-            <h2 class="section-title">أحدث النشرات والجرائد</h2>
-            <div class="news-grid">
-                
-                <!-- خبر جديد 1 -->
-                <article class="news-card">
-                    <img src="https://via.placeholder.com/400x250" alt="صورة الخبر">
-                    <div class="news-content">
-                        <h2 class="news-title">عنوان الجريدة أو المنشور الجديد هنا</h2>
-                        <p class="news-meta">تم النشر الآن</p>
+    <div class="main-container">
+        <!-- إعلان جهة اليمين -->
+        <div class="ad-banner">
+            مساحة إعلانية
+        </div>
+
+        <!-- المحتوى الأوسط -->
+        <div class="content-area">
+            <div class="top-section">
+                <!-- قسم عن الموقع في مكان الـ X -->
+                <div class="about-box">
+                    <h3>عن الموقع</h3>
+                    <p>موقع SSC الرسمي لنشر أحدث المقالات والأخبار والتغطيات الحصرية.</p>
+                </div>
+
+                <!-- قسم أحدث المنشورات -->
+                <div class="news-section">
+                    <h2>أحدث النشرات والجرائد</h2>
+                    <div class="news-grid">
+                        <div class="news-card">
+                            <div style="background:#eee; height:100px; display:flex; align-items:center; justify-content:center; color:#888;">صورة الخبر</div>
+                            <h4>عنوان المنشور الجديد هنا</h4>
+                            <span style="font-size:11px; color:#888;">تم النشر الآن</span>
+                        </div>
+                        <div class="news-card">
+                            <div style="background:#eee; height:100px; display:flex; align-items:center; justify-content:center; color:#888;">صورة الخبر</div>
+                            <h4>منشور حديث أضيف مؤخراً</h4>
+                            <span style="font-size:11px; color:#888;">منذ 30 دقيقة</span>
+                        </div>
                     </div>
-                </article>
-
-                <!-- خبر جديد 2 -->
-                <article class="news-card">
-                    <img src="https://via.placeholder.com/400x250" alt="صورة الخبر">
-                    <div class="news-content">
-                        <h2 class="news-title">منشور حديث أضيف مؤخراً للموقع</h2>
-                        <p class="news-meta">منذ 30 دقيقة</p>
-                    </div>
-                </article>
-
+                </div>
             </div>
-        </main>
+        </div>
 
-        <!-- الشريط الجانبي للإعلانات والمعلومات -->
-        <aside class="sidebar">
-            <div class="ad-space">مساحة إعلانية (300x250)</div>
-            <div class="widget">
-                <h3 style="border-bottom: 2px solid #e63946; padding-bottom: 5px; margin-bottom: 10px;">عن الموقع</h3>
-                <p>جريدة SSC الرسمية لنشر أحدث المقالات والتقارير الحصرية.</p>
-            </div>
-        </aside>
+        <!-- إعلان جهة اليسار -->
+        <div class="ad-banner">
+            مساحة إعلانية
+        </div>
     </div>
 
-    <footer><p>جميع الحقوق محفوظة &copy; 2026 - جريدة SSC</p></footer>
+    <footer>
+        جميع الحقوق محفوظة © 2026 - SSC
+    </footer>
+
 </body>
 </html>
