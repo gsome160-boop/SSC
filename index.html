@@ -13,7 +13,6 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; margin: 0; padding: 0; }
         header { background-color: #1a1a1a; color: #fff; text-align: center; padding: 15px 0; border-bottom: 4px solid #d32f2f; }
         header h1 { margin: 0; font-size: 28px; font-weight: bold; }
-        a { text-decoration: none; color: inherit; }
         
         .main-container { max-width: 900px; margin: 40px auto; padding: 0 15px; }
         
@@ -21,12 +20,10 @@
         .news-section { flex: 1; max-width: 500px; }
         .news-section h2 { margin-top: 0; border-right: 4px solid #d32f2f; padding-right: 10px; font-size: 20px; color: #1a1a1a; margin-bottom: 20px; }
         
-        .ad-card { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center; border: 2px solid #d32f2f; display: block; transition: 0.2s; cursor: pointer; }
-        .ad-card:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(211,47,47,0.15); }
-        .ad-title { color: #d32f2f; font-size: 18px; font-weight: bold; margin-bottom: 10px; }
-        .ad-desc { font-size: 13px; color: #444; line-height: 1.6; margin-bottom: 15px; }
-        .ad-credits { background: #fdf2f2; border-radius: 6px; padding: 10px; font-size: 12px; border: 1px dashed #f5c6c6; text-align: right; margin-bottom: 15px; color: #333; line-height: 1.5; }
-        .ad-btn { background: #d32f2f; color: #fff; font-size: 13px; padding: 8px; border-radius: 5px; font-weight: bold; display: block; width: 100%; box-sizing: border-box; }
+        /* كارت ثابت وغير قابل للنقر */
+        .ad-card { background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center; border: 2px solid #d32f2f; cursor: default; }
+        .ad-desc { font-size: 14px; color: #444; line-height: 1.6; margin-bottom: 15px; }
+        .ad-credits { background: #fdf2f2; border-radius: 6px; padding: 12px; font-size: 13px; border: 1px dashed #f5c6c6; text-align: right; color: #333; line-height: 1.6; }
 
         .about-box { width: 280px; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 4px solid #d32f2f; border: 1px solid #eee; }
 
@@ -46,15 +43,13 @@
             <div class="news-section">
                 <h2>أحدث النشرات والجرائد</h2>
                 
-                <a href="post.html?title=تغطية خاصة لأحداث السودان&content=تغطية إخبارية مستمرة لأحدث المستجدات والتقارير الحصرية عبر موقع SSC." class="ad-card">
-                    <div class="ad-title">🇸🇩 نبض السودان</div>
-                    <div class="ad-desc">متابعة شاملة وأحدث التغطيات والتطورات في السودان لحظة بلحظة عبر SSC.</div>
+                <div class="ad-card">
+                    <div class="ad-desc">متابعة شاملة وأحدث التغطيات والتطورات لحظة بلحظة عبر SSC.</div>
                     <div class="ad-credits">
                         📌 <b>فكرة:</b> محمد أحمد البشرى<br>
                         🛠️ <b>إعداد:</b> أبو القاسم محمد أحمد البشرى
                     </div>
-                    <span class="ad-btn">تصفح أخبار السودان</span>
-                </a>
+                </div>
             </div>
 
             <div class="about-box">
