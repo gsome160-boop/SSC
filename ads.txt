@@ -1,1 +1,4 @@
-google.com, pub-4545737968537975, DIRECT, f08c47fec0942fa0
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4545737968537975"
+     crossorigin="anonymous"></script>
+<head>
